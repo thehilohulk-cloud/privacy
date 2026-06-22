@@ -100,3 +100,54 @@ A key clarification up front: TPTS runs **two domains**, and they do different j
 - Live spam-complaint and bounce rates (only meaningful after sends begin).
 - Confirmation of sending-domain authentication status (Settings → Email).
 - Any tags/segments not surfaced in the setup notes.
+
+---
+
+# Part B — Setup Execution & Tool Inventory (2026-06-22)
+
+> Goal: get Kit set up "as best as possible" and document **exactly which tools can build the email agent and campaigns.** Reality check: in this session there is **no Kit MCP and no browser-automation tool**, so I cannot click around Kit's UI. The only programmatic path to Kit is the **Zapier Kit (ConvertKit) integration**, which is **enabled but not yet authenticated** to Garrett's account.
+
+## What can be done programmatically vs. UI-only
+
+| Task | Tool path | Status |
+|---|---|---|
+| Find/create subscribers, apply tags, add to forms/sequences, log purchases | **Zapier → Kit** (`subscriberSearch`, `formCreate`, `sequenceCreate`, `tagCreate`, `tag_remove`, `purchaseCreate`) | **Blocked on 1-click auth** |
+| Create tags / custom fields / forms / sequences / broadcasts, list subscribers, read account | **Zapier → Kit raw API passthrough** (`_zap_raw_request` → Kit API v4) | **Blocked on 1-click auth** |
+| Import GHL contacts into Kit (with goal/stage tags) | Zapier (GHL/Sheets → Kit) | Blocked on auth + a source export |
+| **Authenticate sending domain (DKIM/SPF/Return-Path)** | **Kit UI only** — *no API* | ⛔ Garrett must do |
+| **Fix mailing address (Seattle → Hilo)** | **Kit UI only** | ⛔ Garrett must do |
+| **Fix timezone (Eastern → Hawaii GMT-10)** | **Kit UI only** | ⛔ Garrett must do |
+| Plan/billing, dedicated IP | Kit UI only | ⛔ Garrett (n/a at Creator tier) |
+| Visual Automation builder, broadcast design/layout | Kit UI (Automations are not API-creatable) | ⛔ Garrett / design tools |
+
+## The one unblock (do this first)
+**Authenticate Kit ↔ Zapier** by visiting the app-auth URL Zapier generated (sign in to the TPTS Kit account and approve). Once connected, the agent can create the tag taxonomy, forms, sequences, import contacts, and even draft/schedule broadcasts via the raw API — without Garrett touching those screens.
+
+## Kit tools available through Zapier (confirmed)
+- `subscriberSearch` — look up a subscriber by email *(read)*
+- `formCreate` — subscribe an email to a form (creates the subscriber if new; can opt into the form's sequence)
+- `sequenceCreate` — add a subscriber to an existing sequence
+- `tagCreate` — apply an existing tag to a subscriber (creates subscriber if new)
+- `tag_remove` — remove a tag from a subscriber
+- `purchaseCreate` — record a purchase (useful for product/Prestige tracking + commerce automations)
+- `_zap_raw_request` — **raw Kit API v4 passthrough** (the powerful one: create tags/fields/forms/sequences/broadcasts, list subscribers, read account state)
+
+> Note: `tagCreate`/`sequenceCreate`/`formCreate` attach subscribers to **existing** tags/sequences/forms (their IDs are dynamic enums of what already exists). To create *new* tags/sequences/forms from scratch, use `_zap_raw_request`.
+
+## Supporting tools already connected (for the email agent + campaigns)
+- **Canva** — design branded email graphics/templates (no Brand Kit on the account yet).
+- **Gmail / Google Drive / Sheets / Docs / Calendar** — content source, contact lists, scheduling.
+- **Make.com & Zapier** — the integration glue between **GHL ↔ Kit** (sync tags/contacts, mirror lifecycle events).
+- **Twilio** — SMS leg of multi-channel campaigns.
+- **GHL + n8n** (TPTS production env, not this session) — system of truth; lifecycle/transactional email via Mailgun.
+
+## Recommended responsibility split (avoid double-sends & DMARC conflicts)
+- **GHL/Mailgun (`mail.transformations.studio`):** transactional + member-lifecycle (waivers, receipts, schedule, onboarding). Already authenticated & warming.
+- **Kit (new, separate subdomain):** marketing — newsletters, nurture sequences, alumni/reactivation campaigns, supplement/Prestige promos.
+- Sync direction: **GHL → Kit** (tags/segments), so GHL stays the source of truth.
+
+## Garrett's UI runbook (the only blockers I cannot do for you)
+1. **Settings → Email → Sending domain:** add a subdomain (e.g. `email.transformations.studio`), publish the DKIM/SPF/Return-Path records Kit shows you to DNS (GoDaddy). Use a *different* subdomain from `mail.transformations.studio`. Do this **before** the `transformations.studio` DMARC ramp to `p=quarantine`.
+2. **Settings (account):** change mailing address to **474 Laukapu St, Hilo, HI 96720**.
+3. **Settings (account):** change timezone to **Hawaii (GMT-10)**.
+4. **Approve the Kit ↔ Zapier connection** (auth URL) so the agent can build the rest.
