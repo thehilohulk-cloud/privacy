@@ -62,7 +62,7 @@ A key clarification up front: TPTS runs **two domains**, and they do different j
 | Question | Finding |
 |---|---|
 | Is Kit connected to GHL? | **No native integration. They operate as separate systems.** GHL remains the single source of truth (members, billing/Stripe, tags, custom fields, AI agents, transactional + lifecycle email via Mailgun). Kit was adopted **only** as a dedicated marketing-email ESP. The only Kit "integration" today is a **Kit MCP connected to Claude Code via OAuth** (`app.kit.com/mcp`) for AI-assisted drafting — and that connection **can only create *draft* broadcasts**, not send. |
-| Automations/workflows/scheduled sends already in Kit? | **None.** No sequences, visual automations, or scheduled broadcasts exist yet. (All existing TPTS automation lives in **n8n + GHL** — e.g. WF-A/WF-B alumni flows, WF-OG poller, Della scheduling — none of it touches Kit.) |
+| Automations/workflows/scheduled sends already in Kit? | **None.** No sequences, visual automations, or scheduled broadcasts exist yet. **The Broadcasts page was confirmed empty via live screenshot on 6/22/2026** ("Start sending broadcasts that get noticed" empty state) — **zero broadcasts ever sent.** (All existing TPTS automation lives in **n8n + GHL** — e.g. WF-A/WF-B alumni flows, WF-OG poller, Della scheduling — none of it touches Kit.) |
 
 **Action for Garrett:** If Kit is to receive GHL contacts automatically, build a bridge. Options available in this stack: **Zapier** or **Make.com** (both connected) can sync GHL tags/contacts → Kit tags/sequences. Decide the system of record per contact to avoid double-emailing (GHL lifecycle vs. Kit marketing).
 
