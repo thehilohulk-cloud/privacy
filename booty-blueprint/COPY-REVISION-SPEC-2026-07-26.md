@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-26
 **Trigger:** Heather Rosario's pre-ship review of `transformations.studio/booty-blueprint`
-**Status:** Ready to apply — 2 placeholders need real numbers before it ships (see Open Items)
+**Status:** Ready to apply — one open item left, the floor cap in Fix 4 (see Open Items)
 
 ---
 
@@ -66,7 +66,9 @@ defense.
 rep coached" — you can't guarantee coaching eyes across a 6-hour window without
 staffing it.*
 
-**Decision:** anchor class with **limited, named** alternate slots.
+**Decision (confirmed 2026-07-26):** name the anchor class on the page, and
+**set the individual schedule at the consultation.** No alternate times are listed
+on the page.
 
 **Delete** all open-window language — anything of the form "sessions slot anywhere
 5–11 AM," "or afternoons," "whenever works for you."
@@ -74,19 +76,28 @@ staffing it.*
 **Replacement copy:**
 
 > **Three coached sessions a week.**
-> The Blueprint class runs **Mon / Thu / Fri at 8:00 AM** with Joanne.
-> Can't make 8:00? A limited number of alternate coached slots are available —
-> **[PLACEHOLDER A: real alternate times]** — confirmed with your coach at your
-> Goal Setting session.
+> The Blueprint class runs **Mon / Thu / Fri at 8:00 AM** with Joanne. If mornings
+> don't work, we'll build your three days around what does — your schedule is set
+> with your coach at your Goal Setting session.
 
-**Why this shape:** it keeps the anchor (which is what makes it read as a program
-rather than a gym membership), it keeps "every rep coached" true, and it stays
-honest about the flexibility that actually exists — without implying a coach is
-standing on the floor for six straight hours.
+**Why this shape:** it keeps the anchor, which is what makes the offer read as a
+program rather than a gym membership. It keeps "every rep coached" true, because
+the page is no longer implying a coach stands on the floor across a six-hour
+window. And the flexibility is now framed as *assigned by a coach* rather than
+*pick whenever* — which is the opposite of the open-gym read Heather flagged,
+even though both sentences describe the same underlying operational reality.
 
-**Guardrail:** whatever goes in Placeholder A has to be slots Joanne is genuinely
-on the floor for. If the honest answer is "it varies," the alternate sentence
-comes out entirely and the page sells the 8:00 AM class only.
+**Why no times are listed:** listing alternates would commit the page to slots
+that have to be staffed and honored. Deferring to the consult keeps the page
+truthful and puts the scheduling conversation where it already belongs — the same
+place the track and the price get set.
+
+**Alignment note:** this now matches the standing Sales Max KB rule —
+*"Garrett confirms the track, the schedule, and the price in the Goal Setting
+session — never promise a specific class time yourself."* Worth confirming Max's
+scripts and the page agree that **Mon/Thu/Fri 8:00 AM is the class anchor** and
+everything past that is a consult conversation. The page names the anchor; Max
+should not be naming individual slots.
 
 ---
 
@@ -169,10 +180,12 @@ this isn't is a sentence not spent on what it is.
 
 ## Open items — needed before this ships
 
-| # | Item | Owner | Blocks |
-|---|---|---|---|
-| A | The real alternate coached slot times (or a decision to drop alternates) | Garrett / Joanne | Fix 2 |
-| B | The real cap on Joanne's Blueprint floor | Garrett | Fix 4 |
+| # | Item | Owner | Blocks | Status |
+|---|---|---|---|---|
+| A | Alternate coached slot times | Garrett / Joanne | Fix 2 | **Resolved 7/26** — no times on the page; schedule is set at the consultation |
+| B | The real cap on Joanne's Blueprint floor | Garrett | Fix 4 | Open |
+
+Fix 4 is the only thing still holding this. Everything else is ready to apply.
 
 ---
 
