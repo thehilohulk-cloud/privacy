@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-26
 **Trigger:** Heather Rosario's pre-ship review of `transformations.studio/booty-blueprint`
-**Status:** Ready to apply — one open item left, the floor cap in Fix 4 (see Open Items)
+**Status:** Final. All five fixes have approved copy — ready to apply and deploy.
 
 ---
 
@@ -129,15 +129,16 @@ insult frame — it fails twice.
 commitment, which fights a $1,299–$2,499 price. Keep rolling enrollment
 operationally, but sell it as limited spots per training block.*
 
-**Decision:** cap the coached floor.
+**Decision (confirmed 2026-07-26):** cap the coached floor at **six clients per
+coach**.
 
 **Delete:** `Start anytime, no cohorts` and any "no start date" / "no cohort"
 phrasing.
 
 **Replacement copy:**
 
-> Joanne keeps **[PLACEHOLDER B: N]** women on the Blueprint floor at a time.
-> Spots open as clients finish their block.
+> **Six clients per coach.** That's the cap. Joanne coaches six women at a time,
+> and a spot opens when someone finishes her block.
 
 CTA microcopy:
 
@@ -148,11 +149,20 @@ stays literally true under rolling enrollment. Operations don't change — Garre
 still fits people in whenever there's room. The page just stops advertising that
 there's always room.
 
-**Guardrail — this one matters:** the number in Placeholder B has to be real and
-actually enforced. A cap the studio doesn't honor is a false-scarcity claim, which
-is the same category of exposure as Fix 1 and would undo the point of this whole
-pass. If there is no number Garrett will hold to, fall back to:
-*"We take a limited number of new Blueprint clients each training block."*
+**Why the ratio leads:** "six clients per coach" does two jobs that "six spots"
+only does one of. It creates the scarcity Heather asked for, **and it is the
+proof behind "every rep coached"** — the exact claim she said the old schedule
+bullet was quietly undercutting. A 6:1 floor is why a coach can actually watch
+every rep. Stated as a ratio it also survives a staffing change, where a bare
+count would silently go false.
+
+**Guardrail:** the cap has to be honored. A cap the studio doesn't enforce is a
+false-scarcity claim — the same category of exposure as Fix 1, and it would undo
+the point of this whole pass.
+
+**Watch item:** if a second coach is ever added to the Blueprint floor, capacity
+becomes twelve. The ratio sentence stays true; **"Joanne coaches six women at a
+time" does not.** Revisit that second sentence if staffing changes.
 
 ---
 
@@ -183,9 +193,11 @@ this isn't is a sentence not spent on what it is.
 | # | Item | Owner | Blocks | Status |
 |---|---|---|---|---|
 | A | Alternate coached slot times | Garrett / Joanne | Fix 2 | **Resolved 7/26** — no times on the page; schedule is set at the consultation |
-| B | The real cap on Joanne's Blueprint floor | Garrett | Fix 4 | Open |
+| B | The cap on Joanne's Blueprint floor | Garrett | Fix 4 | **Resolved 7/26** — six clients per coach |
 
-Fix 4 is the only thing still holding this. Everything else is ready to apply.
+**No open items. All five fixes have final copy and are ready to apply to the
+page.** The remaining work is execution: apply, sync the KB and codex, deploy,
+verify, and get Heather's sign-off.
 
 ---
 
@@ -204,6 +216,11 @@ contradict the live page to the exact leads the page is meant to convert.
    **"start anytime — no cohort, no start date."** That is now wrong as a *sales*
    line even though it stays true operationally. Both need a note that the public
    framing is a capped floor with spots opening as clients finish.
+3. **Add the 6:1 cap to the KB as a usable sales fact.** Max should be able to say
+   it — "six clients per coach" answers *what makes it different from a gym* and
+   *why it costs what it costs* in four words, and it is the substantiation behind
+   every "coached" claim in the whole knowledge base. Suggested placement:
+   `METHOD AND TOOLS`, alongside the existing "small-group, coach-led" line.
 
 **`OPERATORS-CODEX.md`** — same correction, 7/25 entry.
 
